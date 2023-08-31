@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cancel Offer</title>
+</head>
+<body>
+    <h1>Cancel Offer</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ cancel_offer_form.as_p }}
+        <input type="submit" value="Cancel Offer">
+    </form>
+</body>
+</html>

@@ -1,0 +1,105 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Minting Successful!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #336699;
+        }
+
+        p {
+            color: #444444;
+        }
+
+        .success-message {
+            color: #00aa00;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .nft-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Minting Successful!</h1>
+        <p class="success-message">Congratulations! Your NFTs have been minted successfully.</p>
+        {% for nft_metadata in nft_metadata_list %}
+        <div class="nft-info">
+            <p>NFT ID: {{ nft_metadata.NFTID }}</p>
+            <p>NFT Serial: {{ nft_metadata.Serial }}</p>
+            <p>Great! It's your {{ forloop.counter }}th NFT</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html> {% endcomment %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minting Successful!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #336699;
+        }
+
+        p {
+            color: #444444;
+        }
+
+        .success-message {
+            color: #00aa00;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .nft-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Minting Successful!</h1>
+        <p class="success-message">Congratulations! Your NFTs have been minted successfully.</p>
+        <div class="nft-info">
+            <p>NFT ID: {{ nft_id }}</p>
+            <p>No. of NFTs: {{ nft_count }}</p>
+        </div>
+    </div>
+</body>
+</html>

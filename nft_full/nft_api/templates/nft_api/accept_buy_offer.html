@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accept Buy Offer</title>
+</head>
+<body>
+    <h1>Accept Buy Offer</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ accept_buy_offer_form.as_p }}
+        <input type="submit" value="Accept Offer">
+    </form>
+</body>
+</html>

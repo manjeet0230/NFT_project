@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accept Sell Offer</title>
+</head>
+<body>
+    <h1>Accept Sell Offer</h1>
+    <form method="post" action="{% url 'accept_sell_offer' %}">
+        {% csrf_token %}
+        Offer Index: <input type="text" name="offer_index"><br>
+        <input type="submit" value="Accept Offer">
+    </form>
+
+    {% if reply %}
+    <h2>Transaction Result:</h2>
+    <p>{{ reply }}</p>
+    {% endif %}
+</body>
+</html>

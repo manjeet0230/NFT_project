@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create NFT</title>
+</head>
+<body>
+    <h1>Create NFT</h1>
+    <form id="nft-form" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title"><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description"><br>
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author"><br>
+
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image"><br>
+
+        <button type="button" id="create-nft-btn">Create NFT</button>
+    </form>
+
+    <script>
+        document.getElementById('nft-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent the form from submitting normally
+        
+            const form = document.getElementById('nft-form');
+            const formData = new FormData(form);
+        
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/create-nft/', {
+                    method: 'POST',
+                    body: formData,
+                });
+        
+                if (response.status === 201) {
+                    const data = await response.json();
+                    alert(`NFT created successfully with ID: ${data.nft_id}`);
+                } else {
+                    const errorData = await response.json();
+                    alert(`Error creating NFT: ${errorData.message}`); // Assuming the server sends an error message in the response JSON
+                }
+            } catch (error) {
+                console.error('Error creating NFT:', error);
+            }
+        });        
+    </script>
+</body>
+</html>

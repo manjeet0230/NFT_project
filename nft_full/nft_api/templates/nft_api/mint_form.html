@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mint NFT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #ff6600;">Mint NFT</h1>
+    <form method="post" enctype="multipart/form-data" id="mint-form">
+        {% csrf_token %}
+        <label for="{{ form.title.id_for_label }}" style="color: #333;">Title:</label>
+        {{ form.title }}
+        <label for="{{ form.description.id_for_label }}" style="color: #333;">Description:</label>
+        {{ form.description }}
+        <label for="{{ form.author.id_for_label }}" style="color: #333;">Author:</label>
+        {{ form.author }}
+        <label for="{{ form.image.id_for_label }}" style="color: #333;">Image:</label>
+        {{ form.image }}
+        <button type="submit" style="background-color: #33cc33;">Mint NFT</button>
+    </form>
+</body>
+</html>
